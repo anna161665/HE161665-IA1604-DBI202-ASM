@@ -35,7 +35,6 @@ ClassID VARCHAR(50) NOT NULL PRIMARY KEY ,
 ClassName VARCHAR(50) NOT NULL,
 );
 
-drop table CLASS_Semester
 CREATE TABLE CLASS_Semester(
 ClassID VARCHAR(50) NOT NULL ,
 SemID VARCHAR(50) NOT NULL,
@@ -45,7 +44,6 @@ CONSTRAINT fk_CLASS_Semester2 FOREIGN KEY (SemID) REFERENCES Semester(SemID),
 );
 --
 
-Drop table [Group]
 CREATE TABLE [Group](
 GID VARCHAR(50) NOT NULL PRIMARY KEY,
 LID VARCHAR(50) NOT NULL,
@@ -66,20 +64,16 @@ CONSTRAINT pk_Group_Student PRIMARY KEY (StuID, GID),
 CONSTRAINT fk_Student1 FOREIGN KEY (StuID) REFERENCES Student(StuID),
 CONSTRAINT fk_Group1 FOREIGN KEY (GID) REFERENCES [Group](GID),
 );
-drop table Group_Student
 --
-CREATE TABLE Assesment(
+CREATE TABLE Assessment(
 AssID VARCHAR(50) NOT NULL PRIMARY KEY,
-[Type] VARCHAR(150) NOT NULL,
-Part INT NOT NULL,
-[Weight] INT NOT NULL,
 [Completion Criteria] INT NOT NULL,
 [Knowledge and Skill] VARCHAR(150) NOT NULL,
 NOTE VARCHAR,
 );
 
 --
-CREATE TABLE Assesment_Subject(
+CREATE TABLE Assessment_Subject(
 SubID VARCHAR(50) NOT NULL,
 AssID VARCHAR(50) NOT NULL,
 [Weight] INT NOT NULL,
@@ -121,5 +115,5 @@ CONSTRAINT fk_Group1 FOREIGN KEY (GID) REFERENCES [Group](GID),
 
 CREATE table Category(
 TypeID varchar(50) PRIMARY KEY, 
-Decription varchar(150),
+[Description] varchar(150),
 );
